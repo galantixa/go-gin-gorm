@@ -1,0 +1,15 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  postgres:
+    image: bitnami/postgresql:latest
+    container_name: bitnami_postgres
+    environment:
+      - POSTGRESQL_USERNAME=yourusername
+      - POSTGRESQL_PASSWORD=yourpassword
+      - POSTGRESQL_DATABASE=yourdbname
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/bitnami/postgresql
